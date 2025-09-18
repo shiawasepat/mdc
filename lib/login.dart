@@ -22,7 +22,7 @@ class _LoginPageState extends State<LoginPage> {
             const SizedBox(height: 80.0),
             Column(
               children: <Widget>[
-                Image.asset('../assets/kana.png', width: 250, height: 250),
+                Image.asset('assets/kana.png', width: 250, height: 250),
                 const SizedBox(height: 16.0),
                 const Text('KANA'),
               ],
