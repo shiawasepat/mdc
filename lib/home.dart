@@ -34,7 +34,7 @@ class HomePage extends StatelessWidget {
           icon: const Icon(Icons.menu, semanticLabel: 'menu'),
           onPressed: () {},
         ),
-        title: const Text('SHRINE'),
+        title: const Text('KANA'),
         actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.search, semanticLabel: 'search'),
