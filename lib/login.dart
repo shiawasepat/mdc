@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mdc_100/colors.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -24,7 +25,7 @@ class _LoginPageState extends State<LoginPage> {
               children: <Widget>[
                 Image.asset('assets/kana.png', width: 250, height: 250),
                 const SizedBox(height: 16.0),
-                const Text('KANA'),
+                Text('KANA', style: Theme.of(context).textTheme.headlineSmall),
               ],
             ),
             const SizedBox(height: 50.0),
@@ -32,7 +33,7 @@ class _LoginPageState extends State<LoginPage> {
             TextField(
               controller: _usernameController,
               decoration: const InputDecoration(
-                filled: true,
+                // filled: true,
                 labelText: 'Username',
               ),
             ),
@@ -40,7 +41,7 @@ class _LoginPageState extends State<LoginPage> {
             TextField(
               controller: _passwordController,
               decoration: const InputDecoration(
-                filled: true,
+                // filled: true,
                 labelText: 'Password',
               ),
               obscureText: true,
@@ -55,13 +56,28 @@ class _LoginPageState extends State<LoginPage> {
                     _usernameController.clear();
                     _passwordController.clear();
                   },
+                  style: TextButton.styleFrom(
+                    foregroundColor: kanaRed,
+                    shape: const BeveledRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(7.0)),
+                    ),
+                  ),
                 ),
+                const SizedBox(width: 16),
                 ElevatedButton(
                   child: const Text('Next'),
                   onPressed: () {
                     Navigator.pop(context);
                     // Proceed to the next step
                   },
+                  style: ElevatedButton.styleFrom(
+                    foregroundColor: kanaRed,
+                    backgroundColor: kanaLightRed,
+                    elevation: 8.0,
+                    shape: const BeveledRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(7.0)),
+                    ),
+                  ),
                 ),
               ],
             ),
