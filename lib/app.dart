@@ -1,36 +1,49 @@
 import 'package:flutter/material.dart';
-
+import 'model/product.dart';
 import 'colors.dart';
-import 'login.dart';
 import 'home.dart';
+import 'login.dart';
+import 'category_menu_page.dart';
+import 'backdrop.dart';
+import 'supplemental/cut_corners_border.dart';
 
-class KanaApp extends StatelessWidget {
+class KanaApp extends StatefulWidget {
   const KanaApp({Key? key}) : super(key: key);
+
+  @override
+  _KanaAppState createState() => _KanaAppState();
+}
+
+class _KanaAppState extends State<KanaApp> {
+  Category _currentCategory = Category.all; // Define the state variable
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'KANA',
-      theme: _kanaTheme,
       initialRoute: '/login',
       routes: {
         '/login': (BuildContext context) => const LoginPage(),
-        '/home': (BuildContext context) => const HomePage(),
+        '/': (BuildContext context) => Backdrop(
+          currentCategory: _currentCategory,
+          frontLayer: HomePage(category: _currentCategory),
+          backLayer: CategoryMenuPage(
+            currentCategory: _currentCategory,
+            onCategoryTap: _onCategoryTap,
+          ),
+          frontTitle: Text('KANA'),
+          backTitle: Text('MENU'),
+        ),
       },
+      theme: _kanaTheme, // Make sure this is defined
     );
   }
-}
 
-@override
-Widget build(BuildContext context) {
-  return MaterialApp(
-    title: 'KANA',
-    initialRoute: '/login',
-    routes: {
-      '/login': (BuildContext context) => const LoginPage(),
-      '/home': (BuildContext context) => const HomePage(),
-    },
-  );
+  void _onCategoryTap(Category category) {
+    setState(() {
+      _currentCategory = category;
+    });
+  }
 }
 
 final ThemeData _kanaTheme = _buildKanaTheme();
@@ -47,12 +60,16 @@ ThemeData _buildKanaTheme() {
     textSelectionTheme: const TextSelectionThemeData(
       selectionColor: kanaLightRed,
     ),
+    appBarTheme: const AppBarTheme(
+      foregroundColor: kanaLightRed,
+      backgroundColor: kanaRed,
+    ),
     inputDecorationTheme: const InputDecorationTheme(
-      border: OutlineInputBorder(),
-      focusedBorder: OutlineInputBorder(
-        borderSide: BorderSide(width: 2.0, color: kanaRed),
+      border: CutCornersBorder(),
+      focusedBorder: CutCornersBorder(
+        borderSide: BorderSide(width: 2.0, color: kanaLightRed),
       ),
-      floatingLabelStyle: TextStyle(color: kanaRed),
+      floatingLabelStyle: TextStyle(color: kanaDarkRed),
     ),
   );
 }
@@ -76,6 +93,6 @@ TextTheme _buildKanaTextTheme(TextTheme base) {
       .apply(
         fontFamily: 'Rubik',
         displayColor: kTextBlack,
-        bodyColor: kTextLightBlack,
+        bodyColor: kTextBlack,
       );
 }

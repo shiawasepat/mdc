@@ -18,10 +18,12 @@ import 'package:intl/intl.dart';
 import '../model/product.dart';
 
 class ProductCard extends StatelessWidget {
-  const ProductCard(
-      {this.imageAspectRatio = 33 / 49, required this.product, Key? key})
-      : assert(imageAspectRatio > 0),
-        super(key: key);
+  const ProductCard({
+    this.imageAspectRatio = 33 / 49,
+    required this.product,
+    Key? key,
+  }) : assert(imageAspectRatio > 0),
+       super(key: key);
 
   final double imageAspectRatio;
   final Product product;
@@ -31,7 +33,10 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final NumberFormat formatter = NumberFormat.simpleCurrency(
-        decimalDigits: 0, locale: Localizations.localeOf(context).toString());
+      decimalDigits: 0,
+      locale: 'id_ID',
+      name: 'IDR',
+    );
     final ThemeData theme = Theme.of(context);
 
     final imageWidget = Image.asset(
@@ -44,10 +49,7 @@ class ProductCard extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
-        AspectRatio(
-          aspectRatio: imageAspectRatio,
-          child: imageWidget,
-        ),
+        AspectRatio(aspectRatio: imageAspectRatio, child: imageWidget),
         SizedBox(
           height: kTextBoxHeight * MediaQuery.of(context).textScaleFactor,
           width: 121.0,

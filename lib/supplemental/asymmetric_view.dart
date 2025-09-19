@@ -13,6 +13,7 @@
 // limitations under the License.
 
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 import '../model/product.dart';
 import 'product_columns.dart';
@@ -21,6 +22,15 @@ class AsymmetricView extends StatelessWidget {
   final List<Product> products;
 
   const AsymmetricView({Key? key, required this.products}) : super(key: key);
+
+  // Add formatter method
+  String formatPrice(int price) {
+    final NumberFormat formatter = NumberFormat.simpleCurrency(
+      locale: 'id_ID',
+      name: 'IDR',
+    );
+    return formatter.format(price);
+  }
 
   List<Widget> _buildColumns(BuildContext context) {
     if (products.isEmpty) {
@@ -42,16 +52,13 @@ class AsymmetricView extends StatelessWidget {
         /// Even cases
         int bottom = _evenCasesIndex(index);
         column = TwoProductCardColumn(
-            bottom: products[bottom],
-            top: products.length - 1 >= bottom + 1
-                ? products[bottom + 1]
-                : null);
+          bottom: products[bottom],
+          top: products.length - 1 >= bottom + 1 ? products[bottom + 1] : null,
+        );
         width += 32.0;
       } else {
         /// Odd cases
-        column = OneProductCardColumn(
-          product: products[_oddCasesIndex(index)],
-        );
+        column = OneProductCardColumn(product: products[_oddCasesIndex(index)]);
       }
       return SizedBox(
         width: width,
