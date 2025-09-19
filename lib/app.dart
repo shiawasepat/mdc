@@ -1,19 +1,41 @@
-import 'colors.dart';
 import 'package:flutter/material.dart';
-// import 'supplemental/cut_corners_border.dart';
 
-ThemeData get kanaTheme => _buildKanaTheme();
+import 'colors.dart';
+import 'login.dart';
+import 'home.dart';
+
+class KanaApp extends StatelessWidget {
+  const KanaApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'KANA',
+      theme: _kanaTheme,
+      initialRoute: '/login',
+      routes: {
+        '/login': (BuildContext context) => const LoginPage(),
+        '/home': (BuildContext context) => const HomePage(),
+      },
+    );
+  }
+}
+
+@override
+Widget build(BuildContext context) {
+  return MaterialApp(
+    title: 'KANA',
+    initialRoute: '/login',
+    routes: {
+      '/login': (BuildContext context) => const LoginPage(),
+      '/home': (BuildContext context) => const HomePage(),
+    },
+  );
+}
+
+final ThemeData _kanaTheme = _buildKanaTheme();
 
 ThemeData _buildKanaTheme() {
-  inputDecorationTheme:
-  const InputDecorationTheme(
-    border: OutlineInputBorder(),
-    focusedBorder: OutlineInputBorder(
-      borderSide: BorderSide(width: 2.0, color: kanaRed),
-    ),
-    floatingLabelStyle: TextStyle(color: kanaRed),
-  );
-
   final ThemeData base = ThemeData.light(useMaterial3: true);
   return base.copyWith(
     colorScheme: base.colorScheme.copyWith(
@@ -21,15 +43,10 @@ ThemeData _buildKanaTheme() {
       secondary: kanaLightRed,
       error: kErrorRed,
     ),
-    scaffoldBackgroundColor: kBackgroundWhite,
+    textTheme: _buildKanaTextTheme(base.textTheme),
     textSelectionTheme: const TextSelectionThemeData(
       selectionColor: kanaLightRed,
     ),
-    appBarTheme: const AppBarTheme(
-      foregroundColor: kanaRed,
-      backgroundColor: kanaLightRed,
-    ),
-
     inputDecorationTheme: const InputDecorationTheme(
       border: OutlineInputBorder(),
       focusedBorder: OutlineInputBorder(

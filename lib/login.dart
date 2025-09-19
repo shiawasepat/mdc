@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mdc_100/colors.dart';
+import 'home.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -67,8 +68,10 @@ class _LoginPageState extends State<LoginPage> {
                 ElevatedButton(
                   child: const Text('Next'),
                   onPressed: () {
-                    Navigator.pop(context);
-                    // Proceed to the next step
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const HomePage()),
+                    );
                   },
                   style: ElevatedButton.styleFrom(
                     foregroundColor: kanaRed,
