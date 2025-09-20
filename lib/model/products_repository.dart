@@ -182,7 +182,7 @@ class ProductsRepository {
         id: 22,
         isFeatured: true,
         name: 'Figurine',
-        price: 70,
+        price: 858000,
       ),
       Product(
         category: [Category.acrylic],
