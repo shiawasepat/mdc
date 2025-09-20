@@ -78,28 +78,29 @@ flutter:
   - packages/kana-images/13-0.jpg
   - packages/kana-images/14-0.jpg 
   - packages/kana-images/15-0.jpg
-  # - packages/kana-images/16-0.jpg
-  # - packages/kana-images/17-0.jpg
-  # - packages/kana-images/18-0.jpg
-  # - packages/kana-images/19-0.jpg
-  # - packages/kana-images/20-0.jpg
-  # - packages/kana-images/21-0.jpg
-  # - packages/kana-images/22-0.jpg
-  # - packages/kana-images/23-0.jpg
-  # - packages/kana-images/24-0.jpg
-  # - packages/kana-images/25-0.jpg
-  # - packages/kana-images/26-0.jpg
-  # - packages/kana-images/27-0.jpg
-  # - packages/kana-images/28-0.jpg
-  # - packages/kana-images/29-0.jpg
-  # - packages/kana-images/30-0.jpg
-  # - packages/kana-images/31-0.jpg
-  # - packages/kana-images/32-0.jpg
-  # - packages/kana-images/33-0.jpg
-  # - packages/kana-images/34-0.jpg
-  # - packages/kana-images/35-0.jpg
-  # - packages/kana-images/36-0.jpg
-  # - packages/kana-images/37-0.jpg
+  - packages/kana-images/16-0.jpg
+  - packages/kana-images/17-0.jpg
+  - packages/kana-images/18-0.jpg
+  - packages/kana-images/19-0.jpg
+  - packages/kana-images/20-0.jpg
+  - packages/kana-images/21-0.jpg
+  - packages/kana-images/22-0.jpg
+  - packages/kana-images/23-0.jpg
+  - packages/kana-images/24-0.jpg
+  - packages/kana-images/25-0.jpg
+  - packages/kana-images/26-0.jpg
+  - packages/kana-images/27-0.jpg
+  - packages/kana-images/28-0.jpg
+  - packages/kana-images/29-0.jpg
+  - packages/kana-images/30-0.jpg
+  - packages/kana-images/31-0.jpg
+  - packages/kana-images/32-0.jpg
+  - packages/kana-images/33-0.jpg
+  - packages/kana-images/34-0.jpg
+  - packages/kana-images/35-0.jpg
+  - packages/kana-images/36-0.jpg
+  - packages/kana-images/37-0.jpg
+  - packages/kana-images/38-0.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

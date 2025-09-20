@@ -12,26 +12,23 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-enum Category { all, figurine, keychain, variety }
+enum Category { all, figurine, acrylic, variety }
 
 class Product {
   const Product({
-    required this.category,
+    required this.category, // Should be List<Category>
     required this.id,
     required this.isFeatured,
     required this.name,
     required this.price,
   });
 
-  final Category category;
+  final List<Category> category; // Make sure this is List<Category>
   final int id;
   final bool isFeatured;
   final String name;
   final int price;
 
   String get assetName => '$id-0.jpg';
-  String get assetPackage => 'kana-images';
-
-  @override
-  String toString() => "$name (id=$id)";
+  String? get assetPackage => 'kana-images';
 }
