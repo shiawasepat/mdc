@@ -69,15 +69,15 @@ flutter:
   - packages/kana-images/4-0.jpg
   - packages/kana-images/5-0.jpg
   - packages/kana-images/6-0.jpg
-  # - packages/kana-images/7-0.jpg
-  # - packages/kana-images/8-0.jpg
-  # - packages/kana-images/9-0.jpg
-  # - packages/kana-images/10-0.jpg
-  # - packages/kana-images/11-0.jpg
-  # - packages/kana-images/12-0.jpg
-  # - packages/kana-images/13-0.jpg
-  # - packages/kana-images/14-0.jpg
-  # - packages/kana-images/15-0.jpg
+  - packages/kana-images/7-0.jpg
+  - packages/kana-images/8-0.jpg
+  - packages/kana-images/9-0.jpg
+  - packages/kana-images/10-0.jpg
+  - packages/kana-images/11-0.jpg
+  - packages/kana-images/12-0.jpg
+  - packages/kana-images/13-0.jpg
+  - packages/kana-images/14-0.jpg 
+  - packages/kana-images/15-0.jpg
   # - packages/kana-images/16-0.jpg
   # - packages/kana-images/17-0.jpg
   # - packages/kana-images/18-0.jpg

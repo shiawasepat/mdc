@@ -32,6 +32,7 @@ class HomePage extends StatelessWidget {
   }
 }
 
+// IDR Currency
 class CurrencyFormatter {
   static String format(int amount) {
     final NumberFormat formatter = NumberFormat.simpleCurrency(

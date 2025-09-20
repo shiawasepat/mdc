@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-enum Category { all, keychain, clothing, figurine }
+enum Category { all, figurine, keychain, variety }
 
 class Product {
   const Product({
